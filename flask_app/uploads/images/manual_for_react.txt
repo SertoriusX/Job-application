@@ -1,0 +1,51 @@
+npm create vite@latest my-app
+cd my-app
+npm install
+npm run dev
+	             
+
+npm install react-router-dom
+
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+                              
+
+
+
+
+
+
+       <div>
+                  <strong>Songs:</strong>
+                  {artist.songs && artist.songs.length > 0 ? (
+                    <ul style={{ paddingLeft: '16px', marginTop: '8px' }}>
+                      {artist.songs.map((song, index) => (
+                        <li key={song.id || index} style={{ marginBottom: '12px' }}>
+                          {song.title || song}
+                          <audio controls style={{ width: '100%', marginTop: '4px' }}>
+                            <source
+                              src={`http://127.0.0.1:5000/uploads/${song.filePath || song}`}
+                              type="audio/mpeg"
+                            />
+                            Your browser does not support the audio element.
+                          </audio>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p style={{ marginTop: '8px', fontStyle: 'italic', color: '#777' }}>No songs</p>
+                  )}
+                </div>
+
+                                                     
+
+                                 
